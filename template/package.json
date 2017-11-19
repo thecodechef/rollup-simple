@@ -1,0 +1,37 @@
+{
+    "name": "{{ name }}",
+    "description": "{{ description }}",
+    "version": "{{ version }}",
+    "author": "{{ author }}",
+    "license": "{{ license }}",
+    "private": true,
+    "scripts": {
+        "dev": "cross-env NODE_ENV=development rollup -c",
+        "build": "cross-env NODE_ENV=production rollup -c"
+    },
+    "dependencies": {
+        "rollup": "^0.51.7",
+        "vue": "^2.5.6"
+    },
+    "browsersList": [
+        "> 1%",
+        "last 2 versions",
+        "not ie <= 8"
+    ],
+    "devDependencies": {
+        "babel-core": "^6.26.0",
+        "babel-preset-env": "^1.6.1",
+        "babel-plugin-external-helpers": "^6.22.0",
+        "cross-env": "^5.1.1",
+        {{#sass}}
+        "node-sass": "^4.7.1",
+        "rollup-plugin-sass": "^0.5.3",
+        {{/sass}}
+        "rollup-plugin-node-resolve": "^3.0.0",
+        "rollup-plugin-node-globals":"^1.1.0",
+        "rollup-plugin-node-builtins": "^2.1.2",
+        "rollup-plugin-eslint": "^4.0.0",
+        "rollup-plugin-babel": "^3.0.2",
+        "rollup-plugin-vue": "^2.5.2"
+    }
+}
